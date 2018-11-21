@@ -1,7 +1,3 @@
-import sun.java2d.pipe.SpanShapeRenderer;
-
-import java.util.Date;
-
 public class SimpleInterest {
 
     private double principal; // amount of initial value
@@ -76,17 +72,17 @@ public class SimpleInterest {
         if (this.rateType.equals(this.termUnit)) // Checks if the units are already compatible; if so returns the term as is
             return this.term;
         else if (this.rateType.equals("days") && this.termUnit.equals("months"))
-            return (this.term * SimpleInterest.DAYS_IN_A_MONTH); // Return conversion from months to days
+            return (this.term * DAYS_IN_A_MONTH); // Return conversion from months to days
         else if (this.rateType.equals("days") && this.termUnit.equals("years"))
-            return (this.term * SimpleInterest.DAYS_IN_A_YEAR); // Return conversion from years to days
+            return (this.term * DAYS_IN_A_YEAR); // Return conversion from years to days
         else if (this.rateType.equals("months") && this.termUnit.equals("days"))
-            return (this.term / SimpleInterest.DAYS_IN_A_MONTH); // Return conversion from days to months
+            return (this.term / DAYS_IN_A_MONTH); // Return conversion from days to months
         else if (this.rateType.equals("months") && this.termUnit.equals("years"))
-            return (this.term * SimpleInterest.MONTHS_IN_A_YEAR); // Return conversion from years to months
+            return (this.term * MONTHS_IN_A_YEAR); // Return conversion from years to months
         else if (this.rateType.equals("years") && this.termUnit.equals("days"))
-            return (this.term / SimpleInterest.DAYS_IN_A_YEAR); // Return conversion from days to years
+            return (this.term / DAYS_IN_A_YEAR); // Return conversion from days to years
         else if (this.rateType.equals("years") && this.termUnit.equals("months"))
-            return (this.term / SimpleInterest.MONTHS_IN_A_YEAR); // Return conversion from months to years
+            return (this.term / MONTHS_IN_A_YEAR); // Return conversion from months to years
 
         return 0.0;
 
