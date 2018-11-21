@@ -6,26 +6,27 @@ public class Tester {
 
         Scanner input = new Scanner(System.in);
         double principal, rate, term;
-        String rateType;
+        String rateType, termUnit;
 
         System.out.println("Simple interest calculator\n");
 
-        System.out.print("Provide principal amount: ");
+        System.out.println("Provide principal amount: ");
         principal = input.nextDouble();
 
-        System.out.print("Provide interest frequency (daily, monthly or yearly): ");
+        System.out.println("\nProvide interest rate frequency (daily, monthly or yearly): ");
         rateType = input.next();
 
-        System.out.print("Provide rate in percent: ");
+        System.out.println("\nProvide rate in percent: ");
         rate = input.nextDouble();
 
-        System.out.print("Provide length of time the interest will be applied for: ");
+        System.out.println("\nProvide length of time the interest will be applied for, followed by unit (days, months or years): ");
         term = input.nextDouble();
+        termUnit = input.next();
 
-        SimpleInterest interest = new SimpleInterest(principal, rate, rateType, term);
+        SimpleInterest interest = new SimpleInterest(principal, rate, rateType, term, termUnit);
 
-        System.out.println("\nSimple interest: " + interest.calculateSimpleInterest());
-        System.out.println("\nMaturity value: " + interest.calculateMaturityValue());
+        System.out.println("\nSimple interest: $" + interest.calculateSimpleInterest());
+        System.out.println("\nMaturity value: $" + interest.calculateMaturityValue());
 
     }
 
