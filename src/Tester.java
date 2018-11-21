@@ -4,7 +4,7 @@ public class Tester {
 
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in); // This will gather all the information from the user
         double principal, rate, term;
         String rateType, termUnit;
 
@@ -13,20 +13,19 @@ public class Tester {
         System.out.println("Provide principal amount: ");
         principal = input.nextDouble();
 
-        System.out.println("\nProvide interest rate frequency (daily, monthly or yearly): ");
-        rateType = input.next();
-
-        System.out.println("\nProvide rate in percent: ");
+        System.out.println("\nProvide rate in percent followed by rate frequency (daily, monthly or yearly): ");
         rate = input.nextDouble();
+        rateType = input.next();
 
         System.out.println("\nProvide length of time the interest will be applied for, followed by unit (days, months or years): ");
         term = input.nextDouble();
         termUnit = input.next();
 
+        // Create SimpleInterest object
         SimpleInterest interest = new SimpleInterest(principal, rate, rateType, term, termUnit);
 
-        System.out.println("\nSimple interest: $" + interest.calculateSimpleInterest());
-        System.out.println("\nMaturity value: $" + interest.calculateMaturityValue());
+        // Print SimpleInterest object, which includes principal, rate, term and calculated simple interest and maturity value
+        System.out.println("\n" + interest);
 
     }
 
